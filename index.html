@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Text Typing Effect</title>
+		<style>
+			body {
+				margin: 0;
+				font-family: monospace;
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 2rem;
+			}
+
+			.text {
+				position: relative;
+				display: inline-block;
+				translate: -1ex 0;
+			}
+
+			.content {
+				white-space: pre;
+			}
+
+			.cursor {
+				position: absolute;
+				right: -1.1ex;
+				width: 0.5em;
+				height: 100%;
+				background-color: black;
+			}
+
+			.cursor:not(.typing) {
+				animation: blinking 0.8s infinite;
+			}
+
+			@keyframes blinking {
+				0% {
+					opacity: 1;
+				}
+				80% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			Typing effect is
+			<span class="text" data-text="Cool,Simple">
+				<span class="content"> </span>
+				<span class="cursor"></span>
+			</span>
+		</div>
+
+		<script src="index.js"></script>
+	</body>
+</html>
